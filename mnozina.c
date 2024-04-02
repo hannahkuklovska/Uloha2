@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 
-void tlac_mnoziny(int mnozina[N])
+void tlac_mnoziny(int mnozina[])
 {
      for (int i = 0; i < N; i++)
      {
@@ -9,19 +9,26 @@ void tlac_mnoziny(int mnozina[N])
      }
 }
 
-void main()
+void prienik_mnozin(int mnozina_1[], int mnozina_2[])
 {
-     int mnozina_1[N], int mnozina_2[L];
-     int mnozina[3] = {1, 2, 3};
-     int mnozina[2] = {2, 4};
-
-     for (int i = 0; i < N; i++)
+     int N;
+     int mnozina_3[N];
+     for (int i = 0; i < 3; i++)
      {
-          for (int j = 0; i < L; i++)
+          for (int j = 0; i < 2; i++)
           {
                if (mnozina_1[i] == mnozina_2[j])
                {
+                    N++;
+                    mnozina_3[i] = mnozina_2[j];
                }
           }
      }
+}
+
+void main()
+{
+
+     int mnozina_1[3] = {1, 2, 3};
+     int mnozina_2[2] = {2, 4};
 }
