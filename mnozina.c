@@ -7,6 +7,7 @@ void tlac_mnoziny(int mnozina[], int N)
      {
           printf("%d ", mnozina[i]);
      }
+     printf("\n");
 }
 
 int prienik_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
@@ -19,12 +20,12 @@ int prienik_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
           {
                if (mnozina_1[i] == mnozina_2[j])
                {
-                    K++;
-                    mnozina_3[i] = mnozina_2[j];
+
+                    mnozina_3[K++] = mnozina_2[j];
                }
           }
      }
-     return K;
+     tlac_mnoziny(mnozina_3, K);
 }
 
 void main()
@@ -32,6 +33,7 @@ void main()
 
      int mnozina_1[3] = {1, 2, 3};
      int mnozina_2[2] = {2, 4};
-
+     int velkost_prieniku;
+     tlac_mnoziny(mnozina_1, 3);
      prienik_mnozin(mnozina_1, mnozina_2, 3, 2);
 }
