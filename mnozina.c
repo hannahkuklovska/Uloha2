@@ -44,18 +44,18 @@ int zjednotenie_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
 
      for (int i = 0; i < L; i++)
      {
+          int pritomny = 0;
           for (int j = 0; j < N; j++)
           {
-               int pritomny = 0;
                if (mnozina_2[i] == mnozina_1[j])
                {
                     pritomny = 1;
                     break;
                }
 
-               if (pritomny = 0)
+               if (pritomny == 0)
                {
-                    mnozina_3[K++] = mnozina_2[i];
+                    mnozina_3[K++] = mnozina_2[j];
                }
           }
      }
