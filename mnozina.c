@@ -14,7 +14,7 @@ void tlac_mnoziny(int mnozina[], int N)
 int prienik_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
 {
 
-     int K;
+     int K = 0;
      int mnozina_3[K];
      for (int i = 0; i < N; i++)
      {
@@ -54,7 +54,7 @@ void main()
 {
 
      int mnozina_1[3] = {1, 2, 3};
-     int mnozina_2[2] = {2, 5};
+     int mnozina_2[2] = {2, 5, 7};
      int velkost_prieniku;
      tlac_mnoziny(mnozina_1, 3);
      prienik_mnozin(mnozina_1, mnozina_2, 3, 2);
