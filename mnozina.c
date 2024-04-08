@@ -15,15 +15,16 @@ int prienik_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
 {
 
      int K = 0;
-     int mnozina_3[K];
+     int mnozina_3[N];
      for (int i = 0; i < N; i++)
      {
-          for (int j = 0; i < L; j++)
+          for (int j = 0; j < L; j++)
           {
                if (mnozina_1[i] == mnozina_2[j])
                {
 
-                    mnozina_3[K++] = mnozina_2[j];
+                    mnozina_3[K] = mnozina_1[i];
+                    K++;
                     break;
                }
           }
@@ -33,9 +34,8 @@ int prienik_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
 
 int zjednotenie_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
 {
-
-     int K;
-     int mnozina_3[K];
+     int K = 0;
+     int mnozina_3[N + L];
      for (int i = 0; i < N; i++)
      {
           for (int j = 0; i < L; i++)
@@ -54,9 +54,8 @@ void main()
 {
 
      int mnozina_1[3] = {1, 2, 3};
-     int mnozina_2[2] = {2, 5, 7};
-     int velkost_prieniku;
+     int mnozina_2[3] = {2, 5, 7};
      tlac_mnoziny(mnozina_1, 3);
-     prienik_mnozin(mnozina_1, mnozina_2, 3, 2);
-     zjednotenie_mnozin(mnozina_1, mnozina_2, 3, 2);
+     prienik_mnozin(mnozina_1, mnozina_2, 3, 3);
+     zjednotenie_mnozin(mnozina_1, mnozina_2, 3, 3);
 }
