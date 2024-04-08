@@ -50,6 +50,11 @@ int zjednotenie_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
                {
                     break;
                }
+
+               else
+               {
+                    mnozina_3[K++] = mnozina_2[j];
+               }
           }
      }
      tlac_mnoziny(mnozina_3, K);
