@@ -44,9 +44,14 @@ int zjednotenie_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
 
      for (int i = 0; i < L; i++)
      {
-          mnozina_3[K++] = mnozina_2[i];
+          for (int j = 0; j < N; j++)
+          {
+               if (mnozina_2[i] == mnozina_1[j])
+               {
+                    break;
+               }
+          }
      }
-
      tlac_mnoziny(mnozina_3, K);
 }
 
