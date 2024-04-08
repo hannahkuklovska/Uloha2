@@ -52,11 +52,11 @@ int zjednotenie_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
                     pritomny = 1;
                     break;
                }
+          }
 
-               if (pritomny == 0)
-               {
-                    mnozina_3[K++] = mnozina_2[j];
-               }
+          if (!pritomny)
+          {
+               mnozina_3[K++] = mnozina_2[i];
           }
      }
      tlac_mnoziny(mnozina_3, K);
