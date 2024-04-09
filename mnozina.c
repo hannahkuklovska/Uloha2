@@ -11,7 +11,7 @@ void tlac_mnoziny(int mnozina[], int N)
      printf("\n");
 }
 
-int prienik_mnozin(int mnozina_1[], int mnozina_2[], int N, int L, int *prien_velk)
+int prienik_mnozin(int *mnozina_1, int *mnozina_2, int N, int L, int *prien_velk)
 {
 
      int K = 0;
@@ -33,7 +33,7 @@ int prienik_mnozin(int mnozina_1[], int mnozina_2[], int N, int L, int *prien_ve
      tlac_mnoziny(mnozina_3, K);
 }
 
-int zjednotenie_mnozin(int mnozina_1[], int mnozina_2[], int N, int L)
+int zjednotenie_mnozin(int *mnozina_1, int *mnozina_2, int N, int L)
 {
      int K = 0;
      int mnozina_3[N + L];
