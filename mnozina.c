@@ -66,8 +66,8 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
 
 void main()
 {
-     MNOZINA mnozina_1 = {1, 2, 3};
-     MNOZINA mnozina_2 = {2, 5, 7};
+     MNOZINA mnozina_1 = {3, {1, 2, 3}};
+     MNOZINA mnozina_2 = {3, {2, 5, 7}};
      MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2);
      tlac_mnoziny(prienik);
 
