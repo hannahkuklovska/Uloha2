@@ -4,7 +4,7 @@
 typedef struct
 {
      int N;
-     int *p;
+     int p[100];
 } MNOZINA;
 
 void tlac_mnoziny(MNOZINA mnozina)
@@ -44,7 +44,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
           vysledok.p[vysledok.N++] = mnozina_1.p[i];
      }
 
-     for (int i = 0; i < mnozina_2.N;; i++)
+     for (int i = 0; i < mnozina_2.N; i++)
      {
           int pritomny = 0;
           for (int j = 0; j < mnozina_1.N; j++)
@@ -66,9 +66,11 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
 
 void main()
 {
-     MNOZINA mnozina_1 = {3, {1, 2, 3}};
-     MNOZINA mnozina_2 = {3, {2, 5, 7}};
-     tlac_mnoziny(mnozina_1, 3);
-     prienik_mnozin(mnozina_1, mnozina_2, 3, 3, &prien_velk);
-     zjednotenie_mnozin(mnozina_1, mnozina_2, 3, 3);
+     MNOZINA mnozina_1 = {1, 2, 3};
+     MNOZINA mnozina_2 = {2, 5, 7};
+     MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2);
+     tlac_mnoziny(prienik);
+
+     MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2);
+     tlac_mnoziny(zjednotenie);
 }
