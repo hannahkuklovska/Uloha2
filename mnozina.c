@@ -36,13 +36,12 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
      return vysledok;
 }
 
-int zjednotenie_mnozin(int *mnozina_1, int *mnozina_2, int N, int L)
+MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
 {
-     int K = 0;
-     int mnozina_3[N + L];
-     for (int i = 0; i < N; i++)
+     MNOZINA vysledok = {0};
+     for (int i = 0; i < mnozina_1.N; i++)
      {
-          mnozina_3[K++] = mnozina_1[i];
+          vysledok.p[vysledok.N++] = mnozina_1.p[i];
      }
 
      for (int i = 0; i < L; i++)
