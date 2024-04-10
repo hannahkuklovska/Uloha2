@@ -1,6 +1,12 @@
 
 #include <stdio.h>
 
+typedef struct
+{
+     int N;
+     int *p;
+} MNOZINA;
+
 void tlac_mnoziny(int mnozina[], int N)
 {
 
