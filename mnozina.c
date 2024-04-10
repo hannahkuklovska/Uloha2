@@ -7,12 +7,12 @@ typedef struct
      int *p;
 } MNOZINA;
 
-void tlac_mnoziny(int mnozina[], int N)
+void tlac_mnoziny(MNOZINA mnozina)
 {
 
-     for (int i = 0; i < N; i++)
+     for (int i = 0; i < mnozina.N; i++)
      {
-          printf("%6d", mnozina[i]);
+          printf("%6d", mnozina.p[i]);
      }
      printf("\n");
 }
