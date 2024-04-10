@@ -44,12 +44,12 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
           vysledok.p[vysledok.N++] = mnozina_1.p[i];
      }
 
-     for (int i = 0; i < L; i++)
+     for (int i = 0; i < mnozina_2.N;; i++)
      {
           int pritomny = 0;
-          for (int j = 0; j < N; j++)
+          for (int j = 0; j < mnozina_1.N; j++)
           {
-               if (mnozina_2[i] == mnozina_1[j])
+               if (mnozina_2.p[i] == mnozina_1.p[j])
                {
                     pritomny = 1;
                     break;
@@ -58,10 +58,10 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
 
           if (!pritomny)
           {
-               mnozina_3[K++] = mnozina_2[i];
+               vysledok.p[vysledok.N++] = mnozina_2.p[i];
           }
      }
-     tlac_mnoziny(mnozina_3, K);
+     return vysledok;
 }
 
 void main()
