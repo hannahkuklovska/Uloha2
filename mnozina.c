@@ -71,6 +71,10 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
      mnozina.N = 0;
 
      srand(time(NULL));
+
+     for (int i = 0; i < velkost; i++)
+     {
+     }
 }
 
 void main()
