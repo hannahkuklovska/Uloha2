@@ -1,6 +1,7 @@
 
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <time.h>
 typedef struct
 {
      int N;
@@ -66,6 +67,10 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
 
 MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 {
+     MNOZINA mnozina;
+     mnozina.N = 0;
+
+     srand(time(NULL));
 }
 
 void main()
