@@ -90,4 +90,6 @@ void main()
 
      MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2);
      tlac_mnoziny(zjednotenie);
+     MNOZINA vygenerovana = generator_mnoziny(5, 1, 80);
+     tlac_mnoziny(vygenerovana);
 }
