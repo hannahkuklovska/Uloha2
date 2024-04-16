@@ -64,6 +64,10 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
      return vysledok;
 }
 
+MNOZINA generator_mnoziny(int velkost, int dh, int hh)
+{
+}
+
 void main()
 {
      int x;
