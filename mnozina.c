@@ -76,6 +76,8 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
      {
           mnozina.p[i] = dh + rand() % (hh - dh + 1);
      }
+
+     return mnozina;
 }
 
 void main()
