@@ -18,7 +18,7 @@ void tlac_mnoziny(MNOZINA mnozina)
      printf("\n");
 }
 
-MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
+MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
 
      MNOZINA vysledok = {0};
@@ -29,7 +29,7 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
                if (mnozina_1.p[i] == mnozina_2.p[j])
                {
                     vysledok.p[vysledok.N++] = mnozina_1.p[i];
-
+                    pocet_op++;
                     break;
                }
           }
@@ -37,7 +37,7 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
      return vysledok;
 }
 
-MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
+MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
      MNOZINA vysledok = {0};
      for (int i = 0; i < mnozina_1.N; i++)
@@ -53,6 +53,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2)
                if (mnozina_2.p[i] == mnozina_1.p[j])
                {
                     pritomny = 1;
+                    pocet_op++;
                     break;
                }
           }
