@@ -85,6 +85,8 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 void main()
 {
      int x;
+     int *pocet_op_prienik;
+     int *pocet_op_zjednotenie;
      MNOZINA mnozina_1 = {3, {1, 2, 3}};
      MNOZINA mnozina_2 = {3, {2, 5, 7}};
      MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2);
