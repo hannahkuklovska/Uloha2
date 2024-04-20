@@ -85,14 +85,14 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 void main()
 {
      int x;
-     int *pocet_op_prienik;
-     int *pocet_op_zjednotenie;
+     int pocet_op_prienik;
+     int pocet_op_zjednotenie;
      MNOZINA mnozina_1 = {3, {1, 2, 3}};
      MNOZINA mnozina_2 = {3, {2, 5, 7}};
-     MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2);
+     MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
      tlac_mnoziny(prienik);
 
-     MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2);
+     MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
      tlac_mnoziny(zjednotenie);
      MNOZINA vygenerovana = generator_mnoziny(5, 1, 80);
      tlac_mnoziny(vygenerovana);
