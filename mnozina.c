@@ -29,7 +29,6 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
                if (mnozina_1.p[i] == mnozina_2.p[j])
                {
                     vysledok.p[vysledok.N++] = mnozina_1.p[i];
-                    pocet_op++;
                     break;
                }
           }
@@ -53,7 +52,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
                if (mnozina_2.p[i] == mnozina_1.p[j])
                {
                     pritomny = 1;
-                    pocet_op++;
+                    (*pocet_op)++;
                     break;
                }
           }
@@ -61,6 +60,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           if (!pritomny)
           {
                vysledok.p[vysledok.N++] = mnozina_2.p[i];
+               (*pocet_op)++;
           }
      }
      return vysledok;
