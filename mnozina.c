@@ -29,6 +29,7 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
                if (mnozina_1.p[i] == mnozina_2.p[j])
                {
                     vysledok.p[vysledok.N++] = mnozina_1.p[i];
+                    (*pocet_op)++;
                     break;
                }
           }
@@ -42,6 +43,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      for (int i = 0; i < mnozina_1.N; i++)
      {
           vysledok.p[vysledok.N++] = mnozina_1.p[i];
+          (*pocet_op)++;
      }
 
      for (int i = 0; i < mnozina_2.N; i++)
@@ -52,7 +54,6 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
                if (mnozina_2.p[i] == mnozina_1.p[j])
                {
                     pritomny = 1;
-                    (*pocet_op)++;
                     break;
                }
           }
@@ -85,8 +86,8 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 void main()
 {
      int x;
-     int pocet_op_prienik;
-     int pocet_op_zjednotenie;
+     int pocet_op_prienik = 0;
+     int pocet_op_zjednotenie = 0;
      MNOZINA mnozina_1 = {3, {1, 2, 3}};
      MNOZINA mnozina_2 = {3, {2, 5, 7}};
      MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
