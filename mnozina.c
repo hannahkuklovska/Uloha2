@@ -106,6 +106,6 @@ void main()
           MNOZINA vygenerovana_1 = generator_mnoziny(i, 1, 100);
           MNOZINA vygenerovana_2 = generator_mnoziny(i, 1, 100);
 
-                    tlac_mnoziny(vygenerovana);
+          MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
      }
 }
