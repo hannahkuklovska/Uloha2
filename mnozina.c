@@ -107,7 +107,7 @@ void main()
           MNOZINA vygenerovana_2 = generator_mnoziny(i, 1, 100);
 
           MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
-          MNOZINA prienik = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
+          MNOZINA zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
 
           printf("%d\t%d\t\t\t%d\n", i, pocet_op_prienik, pocet_op_zjednotenie);
      }
