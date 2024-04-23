@@ -120,5 +120,7 @@ void main()
 
           double average_prienik = total_pocet_op_prienik / 10.0;
           double average_zjednotenie = total_pocet_op_zjednotenie / 10.0;
+
+          printf("%d, %.2f, %.2f\n", i, average_prienik, average_zjednotenie);
      }
 }
