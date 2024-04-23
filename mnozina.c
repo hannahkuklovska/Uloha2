@@ -70,14 +70,11 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 {
      MNOZINA mnozina;
-     mnozina.N = 0;
-
-     srand(time(NULL));
+     mnozina.N = velkost;
 
      for (int i = 0; i < velkost; i++)
      {
           mnozina.p[i] = dh + rand() % (hh - dh + 1);
-          mnozina.N++;
      }
 
      return mnozina;
@@ -85,6 +82,7 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 
 void main()
 {
+     srand(time(NULL));
      int x;
      int pocet_op_prienik = 0;
      int pocet_op_zjednotenie = 0;
@@ -99,4 +97,15 @@ void main()
      printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
      MNOZINA vygenerovana = generator_mnoziny(5, 1, 80);
      tlac_mnoziny(vygenerovana);
+
+     for (int i = 1; i < 20; i++)
+     {
+          int pocet_op_prienik = 0;
+          int pocet_op_zjednotenie = 0;
+
+          MNOZINA vygenerovana_1 = generator_mnoziny(i, 1, 100);
+          MNOZINA vygenerovana_2 = generator_mnoziny(i, 1, 100);
+
+                    tlac_mnoziny(vygenerovana);
+     }
 }
