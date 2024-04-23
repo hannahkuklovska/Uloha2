@@ -1,0 +1,24 @@
+Funkcia prienik pocet porovnaní: 1 
+     2
+     1     2     3     5     7
+Funkcia zjednotenie pocet porovnaní: 5
+    80    27     4    59    53
+1 2
+2 4
+3 6
+4 8
+5 10
+6 12
+7 14
+8 16
+9 18
+10 20
+11 23
+12 24
+13 26
+14 28
+15 30
+16 32
+17 34
+18 35
+19 38

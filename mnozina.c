@@ -109,6 +109,6 @@ void main()
           MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
           MNOZINA zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
 
-          printf("%d: %d\n", i, pocet_op_prienik + pocet_op_zjednotenie);
+          printf("%d %d\n", i, pocet_op_prienik + pocet_op_zjednotenie);
      }
 }
