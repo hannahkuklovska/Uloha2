@@ -100,15 +100,22 @@ void main()
 
      for (int i = 1; i < 20; i++)
      {
-          int pocet_op_prienik = 0;
-          int pocet_op_zjednotenie = 0;
+          int total_pocet_op_prienik = 0;
+          int total_pocet_op_zjednotenie = 0;
 
-          MNOZINA vygenerovana_1 = generator_mnoziny(i, 1, 100);
-          MNOZINA vygenerovana_2 = generator_mnoziny(i, 1, 100);
+          for (int j = 0; j < 10; j++)
+          {
+               int pocet_op_prienik = 0;
+               int pocet_op_zjednotenie = 0;
 
-          MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
-          MNOZINA zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
+               MNOZINA vygenerovana_1 = generator_mnoziny(i, 1, 100);
+               MNOZINA vygenerovana_2 = generator_mnoziny(i, 1, 100);
 
-          printf("%d, %d, %d\n", i, pocet_op_prienik, pocet_op_zjednotenie);
+               MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
+               MNOZINA zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
+
+               total_pocet_op_prienik += pocet_op_prienik;
+               total_pocet_op_zjednotenie += pocet_op_zjednotenie;
+          }
      }
 }
