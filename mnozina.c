@@ -117,5 +117,8 @@ void main()
                total_pocet_op_prienik += pocet_op_prienik;
                total_pocet_op_zjednotenie += pocet_op_zjednotenie;
           }
+
+          double average_prienik = total_pocet_op_prienik / 10.0;
+          double average_zjednotenie = total_pocet_op_zjednotenie / 10.0;
      }
 }
