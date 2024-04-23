@@ -89,14 +89,14 @@ void main()
      MNOZINA mnozina_1 = {3, {1, 2, 3}};
      MNOZINA mnozina_2 = {3, {2, 5, 7}};
      MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
-     printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
-     tlac_mnoziny(prienik);
+     // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
+     // tlac_mnoziny(prienik);
 
      MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
-     tlac_mnoziny(zjednotenie);
-     printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
+     // tlac_mnoziny(zjednotenie);
+     // printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
      MNOZINA vygenerovana = generator_mnoziny(5, 1, 80);
-     tlac_mnoziny(vygenerovana);
+     // tlac_mnoziny(vygenerovana);
 
      for (int i = 1; i < 20; i++)
      {
@@ -109,6 +109,6 @@ void main()
           MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
           MNOZINA zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
 
-          printf("%d %d\n", i, pocet_op_prienik + pocet_op_zjednotenie);
+          printf("%d, %d, %d\n", i, pocet_op_prienik, pocet_op_zjednotenie);
      }
 }
