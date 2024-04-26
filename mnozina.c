@@ -103,8 +103,9 @@ void main()
           int total_pocet_op_prienik = 0;
           int total_pocet_op_zjednotenie = 0;
 
-          for (int j = 0; j < 10; j++)
+          for (int j = 0; j < 100; j++)
           {
+
                int pocet_op_prienik = 0;
                int pocet_op_zjednotenie = 0;
 
@@ -118,8 +119,8 @@ void main()
                total_pocet_op_zjednotenie += pocet_op_zjednotenie;
           }
 
-          double average_prienik = total_pocet_op_prienik / 10.0;
-          double average_zjednotenie = total_pocet_op_zjednotenie / 10.0;
+          double average_prienik = total_pocet_op_prienik / 100.0;
+          double average_zjednotenie = total_pocet_op_zjednotenie / 100.0;
 
           printf("%d, %.2f, %.2f\n", i, average_prienik, average_zjednotenie);
      }
