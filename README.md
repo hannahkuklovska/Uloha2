@@ -24,3 +24,9 @@ Program vykonáva aj zisťovanie priemerného počtu množinových operácií pr
 ## Tabuľka
 
 Súčasťou je aj tabuľka vytvorená v jazyku python, na vizualizáciu počtu množinových operácií, pri rôznej dĺžke množín. Naším cieľom je na nej lepšie porozumieť efektivite nášho kódu, jeho rýchlosti a implementácií.
+
+# Otázka efektivity
+
+Graf zobrazujúci závislosť medzi veľkosťou množiny a počtom vykonaných porovnaní má aktuálne kvadratickú formu.
+Prirodzene sa nám naskytá otázka, ako zefektívniť náš program, aby výstup bol lineárny? To je naša práca na najbližšie
+riadky programu
