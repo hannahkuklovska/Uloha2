@@ -2,13 +2,12 @@ import matplotlib.pyplot as plt
 
 # Data
 set_sizes = list(range(0, 20))
-avg_porovnanie_prienik = [1, 5, 10, 17, 23, 28, 52, 57, 77, 106, 121, 158, 155, 186, 199, 238, 261, 277, 331, 386]
-avg_porovnanie_zjednotenie = [1, 5, 10, 17, 24, 27, 53, 58, 79, 98, 116, 161, 155, 193, 201, 240, 260, 285, 338, 374]
-
+averages_intersection = [0.01, 0.05, 0.09, 0.12, 0.31, 0.26, 0.61, 0.54, 0.73, 0.98, 1.13, 1.51, 1.58, 1.73, 2.01, 2.45, 2.37, 3.07, 3.07, 3.26]
+averages_union = [0.01, 0.05, 0.08, 0.12, 0.31, 0.28, 0.57, 0.54, 0.72, 0.95, 1.12, 1.44, 1.56, 1.72, 1.97, 2.46, 2.37, 3.07, 3.15, 3.25]
 # Graf
 plt.figure(figsize=(10, 6))
-plt.plot(set_sizes, avg_porovnanie_prienik, label='Prienik')
-plt.plot(set_sizes, avg_porovnanie_zjednotenie, label='Zjednotenie')
+plt.plot(set_sizes, averages_intersection, label='Prienik')
+plt.plot(set_sizes, averages_union, label='Zjednotenie')
 plt.xlabel('Počet prvkov množiny')
 plt.ylabel('Priemerný počet porovnaní')
 plt.legend()
