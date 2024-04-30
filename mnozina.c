@@ -24,12 +24,14 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      MNOZINA vysledok = {0};
      for (int i = 0; i < mnozina_1.N; i++)
      {
+
           for (int j = 0; j < mnozina_2.N; j++)
           {
                if (mnozina_1.p[i] == mnozina_2.p[j])
                {
-                    vysledok.p[vysledok.N++] = mnozina_1.p[i];
                     (*pocet_op)++;
+                    vysledok.p[vysledok.N++] = mnozina_1.p[i];
+
                     break;
                }
           }
@@ -43,7 +45,6 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      for (int i = 0; i < mnozina_1.N; i++)
      {
           vysledok.p[vysledok.N++] = mnozina_1.p[i];
-          (*pocet_op)++;
      }
 
      for (int i = 0; i < mnozina_2.N; i++)
@@ -53,6 +54,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           {
                if (mnozina_2.p[i] == mnozina_1.p[j])
                {
+                    (*pocet_op)++;
                     pritomny = 1;
                     break;
                }
@@ -61,8 +63,8 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           if (!pritomny)
           {
                vysledok.p[vysledok.N++] = mnozina_2.p[i];
-               (*pocet_op)++;
           }
+          //(*pocet_op)++;
      }
      return vysledok;
 }
@@ -87,18 +89,18 @@ void main()
      int pocet_op_prienik = 0;
      int pocet_op_zjednotenie = 0;
      MNOZINA mnozina_1 = {3, {1, 2, 3}};
-     MNOZINA mnozina_2 = {3, {2, 5, 7}};
-     MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
+     MNOZINA mnozina_2 = {3, {2, 5, 3}};
+     // MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
      // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
      // tlac_mnoziny(prienik);
 
-     MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
+     // MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
      // tlac_mnoziny(zjednotenie);
      // printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
-     MNOZINA vygenerovana = generator_mnoziny(5, 1, 80);
+     // MNOZINA vygenerovana = generator_mnoziny(5, 1, 80);
      // tlac_mnoziny(vygenerovana);
 
-     for (int i = 1; i < 20; i++)
+     for (int i = 1; i < 21; i++)
      {
           int total_pocet_op_prienik = 0;
           int total_pocet_op_zjednotenie = 0;
@@ -123,5 +125,6 @@ void main()
           double average_zjednotenie = total_pocet_op_zjednotenie / 100.0;
 
           printf("%d, %.2f, %.2f\n", i, average_prienik, average_zjednotenie);
+          // printf("%d, %d, %d\n", i, total_pocet_op_prienik, total_pocet_op_zjednotenie);
      }
 }
