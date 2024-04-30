@@ -24,12 +24,11 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      MNOZINA vysledok = {0};
      for (int i = 0; i < mnozina_1.N; i++)
      {
-
           for (int j = 0; j < mnozina_2.N; j++)
           {
+               (*pocet_op)++;
                if (mnozina_1.p[i] == mnozina_2.p[j])
                {
-                    (*pocet_op)++;
                     vysledok.p[vysledok.N++] = mnozina_1.p[i];
 
                     break;
@@ -45,6 +44,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      for (int i = 0; i < mnozina_1.N; i++)
      {
           vysledok.p[vysledok.N++] = mnozina_1.p[i];
+          (*pocet_op)++;
      }
 
      for (int i = 0; i < mnozina_2.N; i++)
@@ -52,9 +52,9 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           int pritomny = 0;
           for (int j = 0; j < mnozina_1.N; j++)
           {
+               (*pocet_op)++;
                if (mnozina_2.p[i] == mnozina_1.p[j])
                {
-                    (*pocet_op)++;
                     pritomny = 1;
                     break;
                }
