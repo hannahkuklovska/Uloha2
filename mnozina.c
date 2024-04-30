@@ -102,8 +102,8 @@ void main()
 
      for (int i = 1; i < 21; i++)
      {
-          int total_pocet_op_prienik = 0;
-          int total_pocet_op_zjednotenie = 0;
+          int total_pocet_op_prienik = 0.0;
+          int total_pocet_op_zjednotenie = 0.0;
 
           for (int j = 0; j < 100; j++)
           {
