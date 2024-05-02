@@ -25,7 +25,7 @@ MNOZINA sort(MNOZINA mnozina)
      {
           int min_index = i;
 
-          for (int j = 0; j < mnozina.N; j++)
+          for (int j = i + 1; j < mnozina.N; j++)
           {
                if (mnozina.p[j] < mnozina.p[min_index])
                {
