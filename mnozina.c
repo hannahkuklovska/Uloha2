@@ -18,8 +18,13 @@ void tlac_mnoziny(MNOZINA mnozina)
      printf("\n");
 }
 
-MNOZINA sort(MNOZINA mnozina)
+MNOZINA sort(MNOZINA mnozina, int, int velkost)
 {
+
+     for (int i = 0; i < velkost - 1; i++)
+     {
+          int min_index = i;
+     }
 }
 
 MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
