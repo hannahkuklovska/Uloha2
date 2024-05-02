@@ -43,6 +43,8 @@ MNOZINA sort(MNOZINA mnozina)
 MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
 
+     mnozina_1 = sort(mnozina_1);
+     mnozina_2 = sort(mnozina_2);
      MNOZINA vysledok = {0};
      for (int i = 0; i < mnozina_1.N; i++)
      {
@@ -62,6 +64,8 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 
 MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
+     mnozina_1 = sort(mnozina_1);
+     mnozina_2 = sort(mnozina_2);
      MNOZINA vysledok = {0};
      for (int i = 0; i < mnozina_1.N; i++)
      {
