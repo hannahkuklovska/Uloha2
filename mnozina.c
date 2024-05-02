@@ -18,7 +18,7 @@ void tlac_mnoziny(MNOZINA mnozina)
      printf("\n");
 }
 
-MNOZINA sort(MNOZINA mnozina, int)
+MNOZINA sort(MNOZINA mnozina)
 {
 
      for (int i = 0; i < mnozina.N - 1; i++)
@@ -112,6 +112,9 @@ void main()
      int pocet_op_zjednotenie = 0;
      MNOZINA mnozina_1 = {3, {1, 2, 3}};
      MNOZINA mnozina_2 = {3, {2, 5, 3}};
+     MNOZINA triedenie = sort(mnozina_1);
+     tlac_mnoziny(triedenie);
+
      // MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
      // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
      // tlac_mnoziny(prienik);
