@@ -18,15 +18,19 @@ void tlac_mnoziny(MNOZINA mnozina)
      printf("\n");
 }
 
-MNOZINA sort(MNOZINA mnozina, int, int velkost)
+MNOZINA sort(MNOZINA mnozina, int)
 {
 
-     for (int i = 0; i < velkost - 1; i++)
+     for (int i = 0; i < mnozina.N - 1; i++)
      {
           int min_index = i;
 
-          for (int j = 0; j < velkost; j++)
+          for (int j = 0; j < mnozina.N; j++)
           {
+               if (mnozina.p[j] < mnozina.p[min_index])
+               {
+                    min_index = j;
+               }
           }
      }
 }
