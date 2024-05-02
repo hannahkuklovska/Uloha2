@@ -139,6 +139,9 @@ void main()
                MNOZINA vygenerovana_1 = generator_mnoziny(i, 1, 100);
                MNOZINA vygenerovana_2 = generator_mnoziny(i, 1, 100);
 
+               vygenerovana_1 = sort(vygenerovana_1);
+               vygenerovana_2 = sort(vygenerovana_2);
+
                MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
                MNOZINA zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
 
