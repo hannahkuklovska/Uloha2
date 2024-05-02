@@ -34,7 +34,9 @@ MNOZINA sort(MNOZINA mnozina, int)
           }
 
           int temp = mnozina.p[i];
-          }
+          mnozina.p[i] = mnozina.p[min_index];
+          mnozina.p[min_index] = temp;
+     }
 }
 
 MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
