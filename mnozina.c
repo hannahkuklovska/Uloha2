@@ -24,6 +24,10 @@ MNOZINA sort(MNOZINA mnozina, int, int velkost)
      for (int i = 0; i < velkost - 1; i++)
      {
           int min_index = i;
+
+          for (int j = 0; j < velkost; j++)
+          {
+          }
      }
 }
 
