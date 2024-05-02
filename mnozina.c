@@ -32,7 +32,9 @@ MNOZINA sort(MNOZINA mnozina, int)
                     min_index = j;
                }
           }
-     }
+
+          int temp = mnozina.p[i];
+          }
 }
 
 MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
