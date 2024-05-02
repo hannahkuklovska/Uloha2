@@ -18,6 +18,10 @@ void tlac_mnoziny(MNOZINA mnozina)
      printf("\n");
 }
 
+MNOZINA sort(MNOZINA mnozina)
+{
+}
+
 MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
 
