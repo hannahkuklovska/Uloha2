@@ -42,8 +42,8 @@ void sort(MNOZINA *mnozina)
 MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
 
-     mnozina_1 = sort(mnozina_1);
-     mnozina_2 = sort(mnozina_2);
+     sort(&mnozina_1);
+     sort(&mnozina_2);
      MNOZINA vysledok = {0};
      int i = 0;
      int j = 0;
@@ -53,6 +53,8 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           if (mnozina_1.p[i] == mnozina_2.p[j])
           {
                vysledok.p[vysledok.N++] = mnozina_1.p[i];
+               i++;
+               j++;
           }
           else if (mnozina_1.p[i] > mnozina_2.p[j])
           {
@@ -68,8 +70,8 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 
 MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
-     mnozina_1 = sort(mnozina_1);
-     mnozina_2 = sort(mnozina_2);
+     sort(&mnozina_1);
+     sort(&mnozina_2);
      MNOZINA vysledok = {0};
 
      for (int i = 0; i < mnozina_1.N; i++)
@@ -120,8 +122,8 @@ void main()
      int pocet_op_zjednotenie = 0;
      MNOZINA mnozina_1 = {3, {1, 2, 3, 8, 9, 5}};
      MNOZINA mnozina_2 = {3, {2, 5, 3, 1, 4, 7}};
-     MNOZINA triedenie = sort(mnozina_1);
-     tlac_mnoziny(triedenie);
+     sort(&mnozina_1);
+     tlac_mnoziny(mnozina_1);
 
      MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
      // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
