@@ -50,6 +50,7 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      int j = 0;
      for (i, j; i < mnozina_1.N && j < mnozina_2.N;)
      {
+          (*pocet_op)++;
           if (mnozina_1.p[i] == mnozina_2.p[j])
           {
                vysledok.p[vysledok.N++] = mnozina_1.p[i];
@@ -95,8 +96,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           {
                vysledok.p[vysledok.N++] = mnozina_2.p[i];
           }
-          //(*pocet_op)++;
-     }
+          }
      return vysledok;
 }
 
