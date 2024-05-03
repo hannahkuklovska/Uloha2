@@ -58,6 +58,10 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           {
                j++;
           }
+          else
+          {
+               i++;
+          }
      }
      for (int i = 0; i < mnozina_1.N; i++)
      {
