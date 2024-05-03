@@ -54,6 +54,10 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           {
                vysledok.p[vysledok.N++] = mnozina_1.p[i];
           }
+          else if (mnozina_1.p[i] > mnozina_2.p[j])
+          {
+               j++;
+          }
      }
      for (int i = 0; i < mnozina_1.N; i++)
      {
