@@ -120,8 +120,8 @@ void main()
      int x;
      int pocet_op_prienik = 0;
      int pocet_op_zjednotenie = 0;
-     MNOZINA mnozina_1 = {3, {1, 2, 3, 8, 9, 5}};
-     MNOZINA mnozina_2 = {3, {2, 5, 3, 1, 4, 7}};
+     MNOZINA mnozina_1 = {6, {1, 2, 3, 8, 9, 5}};
+     MNOZINA mnozina_2 = {6, {2, 5, 3, 1, 4, 7}};
      sort(&mnozina_1);
      tlac_mnoziny(mnozina_1);
 
