@@ -5,7 +5,7 @@
 typedef struct
 {
      int N;
-     int p[100];
+     int p[1000];
 } MNOZINA;
 
 void tlac_mnoziny(MNOZINA mnozina)
@@ -18,26 +18,25 @@ void tlac_mnoziny(MNOZINA mnozina)
      printf("\n");
 }
 
-MNOZINA sort(MNOZINA mnozina)
+void sort(MNOZINA *mnozina)
 {
 
-     for (int i = 0; i < mnozina.N - 1; i++)
+     for (int i = 0; i < mnozina->N - 1; i++)
      {
           int min_index = i;
 
-          for (int j = i + 1; j < mnozina.N; j++)
+          for (int j = i + 1; j < mnozina->N; j++)
           {
-               if (mnozina.p[j] < mnozina.p[min_index])
+               if (mnozina->p[j] < mnozina->p[min_index])
                {
                     min_index = j;
                }
           }
 
-          int temp = mnozina.p[i];
-          mnozina.p[i] = mnozina.p[min_index];
-          mnozina.p[min_index] = temp;
+          int temp = mnozina->p[i];
+          mnozina->p[i] = mnozina->p[min_index];
+          mnozina->p[min_index] = temp;
      }
-     return mnozina;
 }
 
 MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
@@ -48,7 +47,7 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      MNOZINA vysledok = {0};
      int i = 0;
      int j = 0;
-     for (i, j; i < mnozina_1.N && j < mnozina_2.N;)
+     for (i = 0, j = 0; i < mnozina_1.N && j < mnozina_2.N;)
      {
           (*pocet_op)++;
           if (mnozina_1.p[i] == mnozina_2.p[j])
@@ -96,7 +95,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           {
                vysledok.p[vysledok.N++] = mnozina_2.p[i];
           }
-          }
+     }
      return vysledok;
 }
 
@@ -119,14 +118,14 @@ void main()
      int x;
      int pocet_op_prienik = 0;
      int pocet_op_zjednotenie = 0;
-     MNOZINA mnozina_1 = {3, {1, 2, 3}};
-     MNOZINA mnozina_2 = {3, {2, 5, 3}};
+     MNOZINA mnozina_1 = {3, {1, 2, 3, 8, 9, 5}};
+     MNOZINA mnozina_2 = {3, {2, 5, 3, 1, 4, 7}};
      MNOZINA triedenie = sort(mnozina_1);
      tlac_mnoziny(triedenie);
 
-     // MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
+     MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
      // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
-     // tlac_mnoziny(prienik);
+     tlac_mnoziny(prienik);
 
      // MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
      // tlac_mnoziny(zjednotenie);
@@ -148,8 +147,8 @@ void main()
                MNOZINA vygenerovana_1 = generator_mnoziny(i, 1, 100);
                MNOZINA vygenerovana_2 = generator_mnoziny(i, 1, 100);
 
-               vygenerovana_1 = sort(vygenerovana_1);
-               vygenerovana_2 = sort(vygenerovana_2);
+               // vygenerovana_1 = sort(vygenerovana_1);
+               // vygenerovana_2 = sort(vygenerovana_2);
 
                MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
                MNOZINA zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
