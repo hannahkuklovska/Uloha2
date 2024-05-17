@@ -122,6 +122,12 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 {
      MNOZINA mnozina;
      mnozina.N = velkost;
+     mnozina.p = malloc(velkost * sizeof(int));
+     if (mnozina.p == NULL)
+     {
+          printf("Alokácia sa nepodarila\n");
+          exit(EXIT_FAILURE);
+     }
 
      for (int i = 0; i < velkost; i++)
      {
@@ -131,22 +137,22 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
      return mnozina;
 }
 
-void main()
+int main()
 {
 
      int x;
      int pocet_op_prienik = 0;
      int pocet_op_zjednotenie = 0;
      srand(time(NULL));
-     MNOZINA mnozina_1 = {6, {1, 2, 3, 8, 9, 5}};
-     MNOZINA mnozina_2 = {6, {2, 5, 3, 1, 4, 7}};
+     MNOZINA mnozina_1 = {6, (int[]){1, 2, 3, 8, 9, 5}};
+     MNOZINA mnozina_2 = {6, (int[]){2, 5, 3, 1, 4, 7}};
      sort(&mnozina_1);
      tlac_mnoziny(mnozina_1);
 
      MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
      // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
      tlac_mnoziny(prienik);
-
+     free(prienik.p);
      // MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
      // tlac_mnoziny(zjednotenie);
      // printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
