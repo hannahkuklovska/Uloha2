@@ -122,14 +122,18 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 {
      MNOZINA mnozina;
      mnozina.N = velkost;
+     int i;
      mnozina.p = malloc(velkost * sizeof(int));
      if (mnozina.p == NULL)
      {
           printf("Alokácia sa nepodarila\n");
           exit(EXIT_FAILURE);
      }
-
      for (int i = 0; i < velkost; i++)
+     {
+          mnozina.p[i] = 0;
+     }
+     for (i = 0; i < velkost; i++)
      {
           mnozina.p[i] = dh + rand() % (hh - dh + 1);
      }
