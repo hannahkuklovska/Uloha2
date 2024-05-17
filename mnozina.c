@@ -11,7 +11,8 @@ typedef struct
 void tlac_mnoziny(MNOZINA mnozina)
 {
 
-     for (int i = 0; i < mnozina.N; i++)
+     int i;
+     for (i = 0; i < mnozina.N; i++)
      {
           printf("%6d", mnozina.p[i]);
      }
@@ -20,12 +21,12 @@ void tlac_mnoziny(MNOZINA mnozina)
 
 void sort(MNOZINA *mnozina)
 {
-
-     for (int i = 0; i < mnozina->N - 1; i++)
+     int i, j, min_index, temp;
+     for (i = 0; i < mnozina->N - 1; i++)
      {
-          int min_index = i;
+          min_index = i;
 
-          for (int j = i + 1; j < mnozina->N; j++)
+          for (j = i + 1; j < mnozina->N; j++)
           {
                if (mnozina->p[j] < mnozina->p[min_index])
                {
@@ -33,7 +34,7 @@ void sort(MNOZINA *mnozina)
                }
           }
 
-          int temp = mnozina->p[i];
+          temp = mnozina->p[i];
           mnozina->p[i] = mnozina->p[min_index];
           mnozina->p[min_index] = temp;
      }
@@ -42,11 +43,12 @@ void sort(MNOZINA *mnozina)
 MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
 
+     int j, i;
      sort(&mnozina_1);
      sort(&mnozina_2);
      MNOZINA vysledok = {0};
-     int i = 0;
-     int j = 0;
+     i = 0;
+     j = 0;
      for (i = 0, j = 0; i < mnozina_1.N && j < mnozina_2.N;)
      {
           (*pocet_op)++;
@@ -70,20 +72,21 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 
 MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
+     int i, j, pritomny;
      sort(&mnozina_1);
      sort(&mnozina_2);
      MNOZINA vysledok = {0};
 
-     for (int i = 0; i < mnozina_1.N; i++)
+     for (i = 0; i < mnozina_1.N; i++)
      {
           vysledok.p[vysledok.N++] = mnozina_1.p[i];
           (*pocet_op)++;
      }
 
-     for (int i = 0; i < mnozina_2.N; i++)
+     for (i = 0; i < mnozina_2.N; i++)
      {
-          int pritomny = 0;
-          for (int j = 0; j < mnozina_1.N; j++)
+          pritomny = 0;
+          for (j = 0; j < mnozina_1.N; j++)
           {
                (*pocet_op)++;
                if (mnozina_2.p[i] == mnozina_1.p[j])
@@ -116,10 +119,11 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
 
 void main()
 {
-     srand(time(NULL));
+
      int x;
      int pocet_op_prienik = 0;
      int pocet_op_zjednotenie = 0;
+     srand(time(NULL));
      MNOZINA mnozina_1 = {6, {1, 2, 3, 8, 9, 5}};
      MNOZINA mnozina_2 = {6, {2, 5, 3, 1, 4, 7}};
      sort(&mnozina_1);
@@ -137,30 +141,36 @@ void main()
 
      for (int i = 1; i < 21; i++)
      {
-          int total_pocet_op_prienik = 0.0;
-          int total_pocet_op_zjednotenie = 0.0;
+          int total_pocet_op_prienik, total_pocet_op_zjednotenie, pocet_op_prienik, pocet_op_zjednotenie;
+          int i, j;
+          MNOZINA vygenerovana_1, vygenerovana_2;
+          MNOZINA prienik, zjednotenie;
+          double average_prienik, average_zjednotenie;
 
-          for (int j = 0; j < 100; j++)
+          total_pocet_op_prienik = 0.0;
+          total_pocet_op_zjednotenie = 0.0;
+
+          for (j = 0; j < 100; j++)
           {
 
-               int pocet_op_prienik = 0;
-               int pocet_op_zjednotenie = 0;
+               pocet_op_prienik = 0;
+               pocet_op_zjednotenie = 0;
 
-               MNOZINA vygenerovana_1 = generator_mnoziny(i, 1, 100);
-               MNOZINA vygenerovana_2 = generator_mnoziny(i, 1, 100);
+               vygenerovana_1 = generator_mnoziny(i, 1, 100);
+               vygenerovana_2 = generator_mnoziny(i, 1, 100);
 
                // vygenerovana_1 = sort(vygenerovana_1);
                // vygenerovana_2 = sort(vygenerovana_2);
 
-               MNOZINA prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
-               MNOZINA zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
+               prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
+               zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
 
                total_pocet_op_prienik += pocet_op_prienik;
                total_pocet_op_zjednotenie += pocet_op_zjednotenie;
           }
 
-          double average_prienik = total_pocet_op_prienik / 100.0;
-          double average_zjednotenie = total_pocet_op_zjednotenie / 100.0;
+          average_prienik = total_pocet_op_prienik / 100.0;
+          average_zjednotenie = total_pocet_op_zjednotenie / 100.0;
 
           printf("%d, %.2f, %.2f\n", i, average_prienik, average_zjednotenie);
           // printf("%d, %d, %d\n", i, total_pocet_op_prienik, total_pocet_op_zjednotenie);
