@@ -51,6 +51,11 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      i = 0;
      j = 0;
      vysledok.p = malloc((mnozina_1.N < mnozina_2.N ? mnozina_1.N : mnozina_2.N) * sizeof(int));
+     if (vysledok.p == NULL)
+     {
+          printf("Alokácia sa nepodarila\n");
+          exit(EXIT_FAILURE);
+     }
      for (i = 0, j = 0; i < mnozina_1.N && j < mnozina_2.N;)
      {
           (*pocet_op)++;
@@ -77,7 +82,14 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      int i, j, pritomny;
      sort(&mnozina_1);
      sort(&mnozina_2);
-     MNOZINA vysledok = {0};
+     MNOZINA vysledok;
+     vysledok.N = 0;
+     vysledok.p = malloc((mnozina_1.N + mnozina_2.N) * sizeof(int));
+     if (vysledok.p == NULL)
+     {
+          printf("Alokácia sa nepodarila\n");
+          exit(EXIT_FAILURE);
+     }
 
      for (i = 0; i < mnozina_1.N; i++)
      {
