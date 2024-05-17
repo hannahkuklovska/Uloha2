@@ -5,7 +5,7 @@
 typedef struct
 {
      int N;
-     int p[1000];
+     int *p; // dynamická alokácia
 } MNOZINA;
 
 void tlac_mnoziny(MNOZINA mnozina)
@@ -14,7 +14,7 @@ void tlac_mnoziny(MNOZINA mnozina)
      int i;
      for (i = 0; i < mnozina.N; i++)
      {
-          printf("%6d", mnozina.p[i]);
+          printf("%6d", mnozina.p + i);
      }
      printf("\n");
 }
