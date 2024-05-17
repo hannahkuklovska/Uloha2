@@ -129,7 +129,7 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
           printf("Alokácia sa nepodarila\n");
           exit(EXIT_FAILURE);
      }
-     for (int i = 0; i < velkost; i++)
+     for (i = 0; i < velkost; i++)
      {
           mnozina.p[i] = 0;
      }
@@ -141,35 +141,35 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
      return mnozina;
 }
 
-int main()
+void main()
 {
 
-     int x;
-     int pocet_op_prienik = 0;
-     int pocet_op_zjednotenie = 0;
+     int x, i, j;
+     int total_pocet_op_prienik, total_pocet_op_zjednotenie, pocet_op_prienik, pocet_op_zjednotenie;
+     MNOZINA vygenerovana_1, vygenerovana_2;
+     MNOZINA prienik, zjednotenie, vygenerovana;
+     double average_prienik, average_zjednotenie;
+     pocet_op_prienik = 0;
+     pocet_op_zjednotenie = 0;
      srand(time(NULL));
-     MNOZINA mnozina_1 = {6, (int[]){1, 2, 3, 8, 9, 5}};
+
+          MNOZINA mnozina_1 = {6, (int[]){1, 2, 3, 8, 9, 5}};
      MNOZINA mnozina_2 = {6, (int[]){2, 5, 3, 1, 4, 7}};
      sort(&mnozina_1);
      tlac_mnoziny(mnozina_1);
 
-     MNOZINA prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
+     prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
      // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
      tlac_mnoziny(prienik);
      free(prienik.p);
-     // MNOZINA zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
-     // tlac_mnoziny(zjednotenie);
+     zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
+     tlac_mnoziny(zjednotenie);
      // printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
-     // MNOZINA vygenerovana = generator_mnoziny(5, 1, 80);
-     // tlac_mnoziny(vygenerovana);
+     vygenerovana = generator_mnoziny(5, 1, 80);
+     tlac_mnoziny(vygenerovana);
 
      for (int i = 1; i < 21; i++)
      {
-          int total_pocet_op_prienik, total_pocet_op_zjednotenie, pocet_op_prienik, pocet_op_zjednotenie;
-          int i, j;
-          MNOZINA vygenerovana_1, vygenerovana_2;
-          MNOZINA prienik, zjednotenie;
-          double average_prienik, average_zjednotenie;
 
           total_pocet_op_prienik = 0.0;
           total_pocet_op_zjednotenie = 0.0;
