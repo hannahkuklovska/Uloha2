@@ -153,9 +153,10 @@ void main()
      pocet_op_zjednotenie = 0;
      srand(time(NULL));
 
-          MNOZINA mnozina_1 = {6, (int[]){1, 2, 3, 8, 9, 5}};
+     MNOZINA mnozina_1 = {6, (int[]){1, 2, 3, 8, 9, 5}};
      MNOZINA mnozina_2 = {6, (int[]){2, 5, 3, 1, 4, 7}};
      sort(&mnozina_1);
+     sort(&mnozina_2);
      tlac_mnoziny(mnozina_1);
 
      prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
@@ -164,9 +165,11 @@ void main()
      free(prienik.p);
      zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
      tlac_mnoziny(zjednotenie);
+     free(zjednotenie.p);
      // printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
      vygenerovana = generator_mnoziny(5, 1, 80);
      tlac_mnoziny(vygenerovana);
+     free(vygenerovana.p);
 
      for (int i = 1; i < 21; i++)
      {
