@@ -194,6 +194,11 @@ void main()
 
                total_pocet_op_prienik += pocet_op_prienik;
                total_pocet_op_zjednotenie += pocet_op_zjednotenie;
+
+               free(vygenerovana_1.p);
+               free(vygenerovana_2.p);
+               free(prienik.p);
+               free(zjednotenie.p);
           }
 
           average_prienik = total_pocet_op_prienik / 100.0;
