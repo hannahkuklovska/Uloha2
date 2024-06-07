@@ -218,6 +218,16 @@ void main()
                prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
                zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
 
+               if (prienik.p == NULL || zjednotenie.p == NULL)
+               {
+                    printf("Alokácia sa nepodarila\n");
+                    free(vygenerovana_1.p);
+                    free(vygenerovana_2.p);
+                    free(prienik.p);
+                    free(zjednotenie.p);
+                    continue;
+               }
+
                total_pocet_op_prienik += pocet_op_prienik;
                total_pocet_op_zjednotenie += pocet_op_zjednotenie;
 
