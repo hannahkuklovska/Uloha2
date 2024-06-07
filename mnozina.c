@@ -164,15 +164,34 @@ void main()
           tlac_mnoziny(prienik);
           free(prienik.p);
      }
+     else
+     {
+          printf("Alokácia sa nepodarila.\n");
+     }
      // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
 
      zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
-     tlac_mnoziny(zjednotenie);
-     free(zjednotenie.p);
+     if (zjednotenie.p != NULL)
+     {
+          tlac_mnoziny(zjednotenie);
+          free(zjednotenie.p);
+     }
+     else
+     {
+          printf("Alokácia sa nepodarila.\n");
+     }
+
      // printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
      vygenerovana = generator_mnoziny(5, 1, 80);
-     tlac_mnoziny(vygenerovana);
-     free(vygenerovana.p);
+     if (vygenerovana.p != NULL)
+     {
+          tlac_mnoziny(vygenerovana);
+          free(vygenerovana.p);
+     }
+     else
+     {
+          printf("Alokácia sa nepodarila.\n");
+     }
 
      for (int i = 1; i < 21; i++)
      {
