@@ -53,8 +53,7 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      vysledok.p = malloc((mnozina_1.N < mnozina_2.N ? mnozina_1.N : mnozina_2.N) * sizeof(int));
      if (vysledok.p == NULL)
      {
-          printf("Alokácia sa nepodarila\n");
-          exit(EXIT_FAILURE);
+          return vysledok;
      }
      for (i = 0, j = 0; i < mnozina_1.N && j < mnozina_2.N;)
      {
@@ -87,8 +86,7 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
      vysledok.p = malloc((mnozina_1.N + mnozina_2.N) * sizeof(int));
      if (vysledok.p == NULL)
      {
-          printf("Alokácia sa nepodarila\n");
-          exit(EXIT_FAILURE);
+          return vysledok;
      }
 
      for (i = 0; i < mnozina_1.N; i++)
@@ -126,8 +124,8 @@ MNOZINA generator_mnoziny(int velkost, int dh, int hh)
      mnozina.p = malloc(velkost * sizeof(int));
      if (mnozina.p == NULL)
      {
-          printf("Alokácia sa nepodarila\n");
-          exit(EXIT_FAILURE);
+          mnozina.N = 0;
+          return mnozina;
      }
      for (i = 0; i < velkost; i++)
      {
