@@ -193,7 +193,7 @@ void main()
           printf("Alokácia sa nepodarila.\n");
      }
 
-     for (int i = 1; i < 21; i++)
+     for (i = 1; i < 21; i++)
      {
 
           total_pocet_op_prienik = 0.0;
@@ -208,9 +208,13 @@ void main()
                vygenerovana_1 = generator_mnoziny(i, 1, 100);
                vygenerovana_2 = generator_mnoziny(i, 1, 100);
 
-               // vygenerovana_1 = sort(vygenerovana_1);
-               // vygenerovana_2 = sort(vygenerovana_2);
-
+               if (vygenerovana_1.p == NULL || vygenerovana_2.p == NULL)
+               {
+                    printf("Alokácia sa nepodarila\n");
+                    free(vygenerovana_1.p);
+                    free(vygenerovana_2.p);
+                    continue;
+               }
                prienik = prienik_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_prienik);
                zjednotenie = zjednotenie_mnozin(vygenerovana_1, vygenerovana_2, &pocet_op_zjednotenie);
 
