@@ -158,9 +158,14 @@ void main()
      tlac_mnoziny(mnozina_1);
 
      prienik = prienik_mnozin(mnozina_1, mnozina_2, &pocet_op_prienik);
+     if (prienik.p != NULL)
+
+     {
+          tlac_mnoziny(prienik);
+          free(prienik.p);
+     }
      // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
-     tlac_mnoziny(prienik);
-     free(prienik.p);
+
      zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
      tlac_mnoziny(zjednotenie);
      free(zjednotenie.p);
