@@ -93,8 +93,13 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           {
                if (vysledok.N == 0 || vysledok.p[vysledok.N - 1] != mnozina_1.p[i])
                {
+                    vysledok.p[vysledok.N++] = mnozina_1.p[i];
                }
+               i++;
           }
+          else if (j < mnozina_2.N && (i >= mnozina_1.N || mnozina_2.p[j] < mnozina_1.p[i]))
+          {
+                    }
      }
 
      for (i = 0; i < mnozina_2.N; i++)
