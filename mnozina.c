@@ -44,8 +44,6 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
 
      int j, i;
-     sort(&mnozina_1);
-     sort(&mnozina_2);
      MNOZINA vysledok;
      vysledok.N = 0;
      i = 0;
@@ -79,8 +77,7 @@ MNOZINA prienik_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
 {
      int i, j, pritomny;
-     sort(&mnozina_1);
-     sort(&mnozina_2);
+
      MNOZINA vysledok;
      vysledok.N = 0;
      vysledok.p = malloc((mnozina_1.N + mnozina_2.N) * sizeof(int));
@@ -168,7 +165,6 @@ void main()
      {
           printf("Alokácia sa nepodarila.\n");
      }
-     // printf("Funkcia prienik pocet porovnaní: %d \n", pocet_op_prienik);
 
      zjednotenie = zjednotenie_mnozin(mnozina_1, mnozina_2, &pocet_op_zjednotenie);
      if (zjednotenie.p != NULL)
@@ -181,7 +177,6 @@ void main()
           printf("Alokácia sa nepodarila.\n");
      }
 
-     // printf("Funkcia zjednotenie pocet porovnaní: %d\n", pocet_op_zjednotenie);
      vygenerovana = generator_mnoziny(5, 1, 80);
      if (vygenerovana.p != NULL)
      {
