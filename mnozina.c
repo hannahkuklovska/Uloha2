@@ -116,24 +116,6 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           }
      }
 
-     for (i = 0; i < mnozina_2.N; i++)
-     {
-          pritomny = 0;
-          for (j = 0; j < mnozina_1.N; j++)
-          {
-               (*pocet_op)++;
-               if (mnozina_2.p[i] == mnozina_1.p[j])
-               {
-                    pritomny = 1;
-                    break;
-               }
-          }
-
-          if (!pritomny)
-          {
-               vysledok.p[vysledok.N++] = mnozina_2.p[i];
-          }
-     }
      return vysledok;
 }
 
