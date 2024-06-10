@@ -86,10 +86,15 @@ MNOZINA zjednotenie_mnozin(MNOZINA mnozina_1, MNOZINA mnozina_2, int *pocet_op)
           return vysledok;
      }
 
-     for (i = 0; i < mnozina_1.N; i++)
+     for (i = 0, j = 0; i < mnozina_1.N || j < mnozina_2.N;)
      {
-          vysledok.p[vysledok.N++] = mnozina_1.p[i];
           (*pocet_op)++;
+          if (i < mnozina_1.N && (j >= mnozina_2.N || mnozina_1.p[i] < mnozina_2.p[j]))
+          {
+               if (vysledok.N == 0 || vysledok.p[vysledok.N - 1] != mnozina_1.p[i])
+               {
+               }
+          }
      }
 
      for (i = 0; i < mnozina_2.N; i++)
